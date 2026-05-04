@@ -1,0 +1,193 @@
+{
+  "version": "v1",
+  "combatRules": {
+    "timelineLength": 12,
+    "chaosWaveLength": 12,
+    "chaosWaveSpeedPerSecond": 1,
+    "resolveChaosWaveBeforeUnitActionOnTie": true,
+    "energyMax": 3,
+    "energyGainOnUnitActionStart": 1,
+    "chaosWaveEnergyMode": "RestoreToMax",
+    "startingHandSize": 5,
+    "handLimit": 10,
+    "drawOnPlayerActionStart": 1,
+    "drawOnChaosWave": 3,
+    "discardToHandLimitAfterDraw": true,
+    "arenaLength": 20,
+    "freeMovePerAction": 2
+  },
+  "initialDistances": {
+    "meleeNormal": 7,
+    "standard": 8,
+    "ranged": 10,
+    "eliteMin": 8,
+    "eliteMax": 10,
+    "boss": 9
+  },
+  "weapons": [
+    { "id": "longsword", "name": "长剑", "range": 2, "baseDamage": 5, "speed": 3, "tags": ["Balanced", "Weakness", "Combo"] },
+    { "id": "warhammer", "name": "战锤", "range": 3, "baseDamage": 13, "speed": 1, "tags": ["Heavy", "Advance", "Overdraft"] },
+    { "id": "dagger", "name": "短刀", "range": 1, "baseDamage": 3, "speed": 5, "tags": ["Fast", "Bleed", "Mobility"] },
+    { "id": "hand_crossbow", "name": "手弩", "range": 10, "baseDamage": 5, "speed": 5, "ammoMax": 3, "ammoStart": 3, "ammoRecoverOnChaosWave": 1, "tags": ["Ranged", "Ammo"] },
+    { "id": "spear", "name": "长枪", "range": 5, "baseDamage": 7, "speed": 2, "tags": ["Spacing", "Knockback", "FirstStrike"] },
+    { "id": "tachi_heavy", "name": "太刀·重势", "range": 2, "baseDamage": 13, "speed": 1, "tags": ["Stance", "Counter"] },
+    { "id": "tachi_fast", "name": "太刀·疾势", "range": 2, "baseDamage": 5, "speed": 4, "tags": ["Stance", "Burst"] },
+    { "id": "battleaxe", "name": "战斧", "range": 3, "baseDamage": 7, "speed": 2, "tags": ["Execute", "Rend"] }
+  ],
+  "characters": [
+    {
+      "id": "lu_xiyun",
+      "name": "陆夕云",
+      "archetype": "侠客",
+      "maxHp": 48,
+      "weaponIds": ["longsword"],
+      "mechanics": {
+        "weaknessMaxStacks": 3,
+        "weaknessDamageBonusPerStack": 0.25,
+        "consumeWeaknessOnDamage": true
+      },
+      "startingDeck": [
+        { "cardId": "slash", "count": 2 },
+        { "cardId": "swift_step_slash", "count": 3 },
+        { "cardId": "acupoint_strike", "count": 1 },
+        { "cardId": "retreating_step", "count": 2 },
+        { "cardId": "sword_momentum", "count": 1 },
+        { "cardId": "gap_breaker", "count": 1 }
+      ]
+    },
+    {
+      "id": "hai_luoan",
+      "name": "海洛安",
+      "archetype": "修女",
+      "maxHp": 60,
+      "weaponIds": ["warhammer"],
+      "mechanics": {
+        "overdraftMax": 3,
+        "sinDebtMax": 5,
+        "sinDebtShieldOrHealPenaltyPerStack": 2,
+        "confessionMax": 5,
+        "confessionGainPerDiscard": 1,
+        "confessionDamageOrShieldPerStack": 2,
+        "overflowDiscardShieldGain": 1
+      },
+      "startingDeck": [
+        { "cardId": "hammer_blow", "count": 2 },
+        { "cardId": "conviction_charge", "count": 2 },
+        { "cardId": "guarded_advance", "count": 2 },
+        { "cardId": "shock_hammer", "count": 1 },
+        { "cardId": "divine_judgement_hammer", "count": 1 },
+        { "cardId": "sentence_declaration", "count": 1 },
+        { "cardId": "atonement_prayer", "count": 1 },
+        { "cardId": "penitent_bulwark", "count": 1 },
+        { "cardId": "silent_confession", "count": 1 },
+        { "cardId": "execution_preparation", "count": 1 }
+      ]
+    },
+    {
+      "id": "lamu",
+      "name": "拉缪",
+      "archetype": "刺客",
+      "maxHp": 42,
+      "weaponIds": ["dagger", "hand_crossbow"],
+      "mechanics": {
+        "daggerBonusFromFarEngageDistance": 4,
+        "daggerBonusToCloseDistance": 1,
+        "daggerBonusDamage": 2
+      },
+      "startingDeck": [
+        { "cardId": "stab", "count": 2 },
+        { "cardId": "sleeve_bolt", "count": 3 },
+        { "cardId": "roll", "count": 2 },
+        { "cardId": "shadow_step", "count": 2 },
+        { "cardId": "backstab", "count": 1 },
+        { "cardId": "reload", "count": 1 },
+        { "cardId": "lacerate", "count": 1 }
+      ]
+    }
+  ],
+  "cards": [
+    { "id": "slash", "name": "平斩", "cost": 1, "range": 2, "damage": 5, "weaponId": "longsword", "target": "Enemy" },
+    { "id": "swift_step_slash", "name": "疾步斩", "cost": 1, "range": 2, "moveToward": 3, "damageIfInRange": 4, "weaponId": "longsword", "target": "Enemy" },
+    { "id": "acupoint_strike", "name": "点穴", "cost": 1, "range": 2, "damage": 3, "applyWeakness": 1, "weaponId": "longsword", "target": "Enemy" },
+    { "id": "retreating_step", "name": "回身步", "cost": 0, "moveAway": 2, "gainEvasion": 1, "target": "Self" },
+    { "id": "sword_momentum", "name": "剑势", "cost": 1, "nextLongswordDamageBonus": 4, "target": "Self" },
+    { "id": "gap_breaker", "name": "破隙", "cost": 2, "range": 2, "damage": 8, "bonusDamageIfTargetHasWeakness": 6, "weaponId": "longsword", "target": "Enemy" },
+    { "id": "hammer_blow", "name": "重击", "cost": 2, "range": 3, "damage": 17, "weaponId": "warhammer", "consumeConfessionForDamage": true, "target": "Enemy" },
+    { "id": "conviction_charge", "name": "断罪冲锋", "cost": 3, "range": 3, "moveToward": 4, "damageIfInRange": 20, "weaponId": "warhammer", "consumeConfessionForDamage": true, "target": "Enemy" },
+    { "id": "guarded_advance", "name": "格挡推进", "cost": 2, "shield": 12, "moveToward": 2, "consumeConfessionForShield": true, "target": "Self" },
+    { "id": "shock_hammer", "name": "震荡锤", "cost": 3, "range": 3, "damage": 25, "knockback": 2, "weaponId": "warhammer", "consumeConfessionForDamage": true, "target": "Enemy" },
+    { "id": "divine_judgement_hammer", "name": "神罚落锤", "cost": 4, "range": 3, "damage": 36, "bonusDamageIfOverdraftedThisAction": 8, "weaponId": "warhammer", "consumeConfessionForDamage": true, "target": "Enemy" },
+    { "id": "sentence_declaration", "name": "罪罚宣告", "cost": 1, "draw": 1, "nextOverdraftNoSinDebt": true, "target": "Self" },
+    { "id": "atonement_prayer", "name": "赎罪祷言", "cost": 1, "removeSinDebtMax": 2, "gainEnergyPerSinDebtRemoved": 1, "drawIfNoSinDebt": 1, "target": "Self" },
+    { "id": "penitent_bulwark", "name": "苦修壁垒", "cost": 0, "discard": 1, "shield": 10, "gainConfession": 1, "target": "Self" },
+    { "id": "silent_confession", "name": "沉默忏悔", "cost": 0, "discardUpTo": 2, "drawPerDiscard": 1, "target": "Self" },
+    { "id": "execution_preparation", "name": "执刑准备", "cost": 1, "discard": 1, "nextWarhammerAttackCostReduction": 1, "target": "Self" },
+    { "id": "stab", "name": "刺击", "cost": 1, "range": 1, "damage": 3, "hits": 2, "weaponId": "dagger", "target": "Enemy" },
+    { "id": "sleeve_bolt", "name": "袖弩", "cost": 1, "range": 10, "damage": 5, "ammoCost": 1, "weaponId": "hand_crossbow", "target": "Enemy" },
+    { "id": "roll", "name": "翻滚", "cost": 0, "moveFlexible": 3, "target": "Self" },
+    { "id": "shadow_step", "name": "影步", "cost": 1, "moveToward": 4, "gainEvasion": 1, "target": "Self" },
+    { "id": "backstab", "name": "背刺", "cost": 2, "range": 1, "damage": 10, "bonusDamageIfMovedThisAction": 5, "weaponId": "dagger", "target": "Enemy" },
+    { "id": "reload", "name": "装填", "cost": 1, "recoverAmmo": 2, "draw": 1, "target": "Self" },
+    { "id": "lacerate", "name": "割裂", "cost": 1, "range": 1, "damage": 3, "applyBleed": 3, "weaponId": "dagger", "target": "Enemy" }
+  ],
+  "statusRules": {
+    "bleed": {
+      "damagePerStackOnOwnerAction": 1,
+      "stackLossOnTrigger": 1
+    },
+    "weakness": {
+      "maxStacks": 3,
+      "damageBonusPerStack": 0.25,
+      "consumeAllOnDamage": true
+    }
+  },
+  "chaosWaveEffects": [
+    { "id": "all_timeline_plus_2", "name": "所有单位行动条+2", "type": "Neutral", "timelineChangeAll": 2 },
+    { "id": "all_speed_plus_1", "name": "所有单位速度+1，持续6秒", "type": "Neutral", "speedChangeAll": 1, "durationSeconds": 6 },
+    { "id": "player_draw_2", "name": "玩家抽2张牌", "type": "Positive", "draw": 2 },
+    { "id": "player_heal_3", "name": "玩家恢复3点生命", "type": "Positive", "heal": 3 },
+    { "id": "enemy_timeline_minus_2", "name": "敌人行动条-2", "type": "Positive", "timelineChangeEnemies": -2 },
+    { "id": "random_distance_2", "name": "双方距离随机变化2", "type": "Neutral", "randomDistanceChange": 2 },
+    { "id": "all_range_minus_1", "name": "所有攻击范围-1，持续6秒", "type": "Neutral", "rangeChangeAll": -1, "durationSeconds": 6 },
+    { "id": "player_energy_minus_1", "name": "玩家当前能量-1", "type": "Negative", "energyChangePlayer": -1 },
+    { "id": "nearest_enemy_shield_8", "name": "最近敌人获得8护盾", "type": "Negative", "shieldNearestEnemy": 8 },
+    { "id": "all_pull_2", "name": "所有单位被拉近2", "type": "Neutral", "pullAllTowardNearest": 2 }
+  ],
+  "enemies": [
+    { "id": "rogue_puppet", "name": "失控傀儡", "tier": "Normal", "hp": 28, "speed": 2, "range": 2, "damage": 6, "tags": ["Tutorial", "Melee"] },
+    { "id": "rustblade_hunter", "name": "锈刃追猎者", "tier": "Normal", "hp": 24, "speed": 4, "range": 1, "damage": 4, "hits": 2, "tags": ["Fast", "Pressure"] },
+    { "id": "steam_guard", "name": "蒸汽盾卫", "tier": "Normal", "hp": 42, "speed": 1, "range": 2, "damage": 11, "tags": ["Shield"] },
+    { "id": "gun_wanderer", "name": "枪械游民", "tier": "Normal", "hp": 26, "speed": 2, "range": 9, "damage": 7, "tags": ["Ranged"] },
+    { "id": "chaos_apprentice", "name": "混沌学徒", "tier": "Normal", "hp": 34, "speed": 3, "range": 3, "damage": 7, "tags": ["TimelineControl"] },
+    { "id": "broken_axle_knight", "name": "断轴骑士", "tier": "Elite", "hp": 85, "speed": 2, "range": 3, "damage": 12, "mechanic": "被击退后获得2力量" },
+    { "id": "redline_sniper", "name": "红线狙击手", "tier": "Elite", "hp": 70, "speed": 3, "range": 10, "damage": 9, "mechanic": "距离6以上伤害+5" },
+    { "id": "furnace_steward", "name": "熔炉执事", "tier": "Elite", "hp": 100, "speed": 1, "range": 3, "damage": 14, "mechanic": "每次浪潮获得14护盾" },
+    {
+      "id": "first_chaos_core",
+      "name": "初代混沌炉心",
+      "tier": "Boss",
+      "hp": 220,
+      "speed": 2,
+      "range": 3,
+      "phases": [
+        { "hpPercentMin": 70, "mechanic": "单体重击，浪潮后获得10护盾" },
+        { "hpPercentMin": 35, "hpPercentMax": 70, "mechanic": "速度+1，攻击附带拉近2" },
+        { "hpPercentMax": 35, "mechanic": "每次浪潮随机改变双方距离2，并使自身行动条+2" }
+      ]
+    }
+  ],
+  "prototypeTargets": {
+    "normalFightSecondsMin": 35,
+    "normalFightSecondsMax": 60,
+    "eliteFightSecondsMin": 70,
+    "eliteFightSecondsMax": 110,
+    "bossFightSecondsMin": 150,
+    "bossFightSecondsMax": 240,
+    "normalHpLossMin": 5,
+    "normalHpLossMax": 12,
+    "eliteHpLossMin": 15,
+    "eliteHpLossMax": 25,
+    "bossHpLossMin": 25,
+    "bossHpLossMax": 45
+  }
+}

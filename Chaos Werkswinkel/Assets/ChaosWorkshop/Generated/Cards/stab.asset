@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541207f6a0a8f3948b52348fe5b04185, type: 3}
+  m_Name: stab
+  m_EditorClassIdentifier: 
+  cardId: stab
+  displayName: "\u523A\u51FB"
+  description: "\u523A\u51FB"
+  cost: 1
+  targetRule: 1
+  damage: 3
+  rangeOverride: 1
+  useWeaponDamage: 0
+  useWeaponRange: 0
+  hits: 2
+  ammoCost: 0
+  bonusDamageIfTargetHasWeakness: 0
+  bonusDamageIfMovedThisAction: 0
+  moveMode: 0
+  moveDistance: 0
+  movementCanChooseDirection: 0
+  shield: 0
+  applyWeakness: 0
+  applyBleed: 0
+  gainEvasion: 0
+  recoverAmmo: 0
+  draw: 0
+  gainEnergy: 0
+  timelineChange: 0
+  nextWeaponDamageBonus: 0
+  effects: []

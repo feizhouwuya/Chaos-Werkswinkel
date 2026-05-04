@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ec178e4359ff440963bdb9bb4a184d, type: 3}
+  m_Name: hai_luoan
+  m_EditorClassIdentifier: 
+  characterId: hai_luoan
+  displayName: Hai Luoan
+  archetype: 1
+  team: 0
+  maxHealth: 60
+  maxEnergy: 3
+  startingWeapon: 1
+  overdraftLimit: 3
+  attackRangeOverride: 0
+  baseDamageOverride: 0
+  speedOverride: 0
+  availableWeapons: 01000000
+  startingDeck:
+  - {fileID: 11400000, guid: 20f5ac5be86e46a47bd35b44178ac4bc, type: 2}
+  - {fileID: 11400000, guid: 20f5ac5be86e46a47bd35b44178ac4bc, type: 2}
+  - {fileID: 11400000, guid: 0e67a5ad27dccc04d8ca7e626250b2da, type: 2}
+  - {fileID: 11400000, guid: 0e67a5ad27dccc04d8ca7e626250b2da, type: 2}
+  - {fileID: 11400000, guid: 7caf67643ccfd894c8125dcd713e0026, type: 2}
+  - {fileID: 11400000, guid: 7caf67643ccfd894c8125dcd713e0026, type: 2}
+  - {fileID: 11400000, guid: 9a4eaa4b7499e794ba03ee54faf0ecdb, type: 2}
+  - {fileID: 11400000, guid: 6317c26a7ee578449b3f1d86ca9d868a, type: 2}
+  - {fileID: 11400000, guid: b8d8728daae72024192effced35a0d50, type: 2}
+  - {fileID: 11400000, guid: 27ce75d60176579499424d128dd13e2f, type: 2}
+  - {fileID: 11400000, guid: 699c84b0bbd82ad4bac8c37e3f4dd065, type: 2}
+  - {fileID: 11400000, guid: 500612730c081bf4388796b4bc760537, type: 2}
+  - {fileID: 11400000, guid: 1a33c6b0a30ed434bada4b4659876b3b, type: 2}

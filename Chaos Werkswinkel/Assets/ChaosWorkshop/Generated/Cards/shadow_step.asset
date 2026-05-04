@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541207f6a0a8f3948b52348fe5b04185, type: 3}
+  m_Name: shadow_step
+  m_EditorClassIdentifier: 
+  cardId: shadow_step
+  displayName: "\u5F71\u6B65"
+  description: "\u5F71\u6B65"
+  cost: 1
+  targetRule: 0
+  damage: 0
+  rangeOverride: 0
+  useWeaponDamage: 0
+  useWeaponRange: 0
+  hits: 1
+  ammoCost: 0
+  bonusDamageIfTargetHasWeakness: 0
+  bonusDamageIfMovedThisAction: 0
+  moveMode: 1
+  moveDistance: 4
+  movementCanChooseDirection: 0
+  shield: 0
+  applyWeakness: 0
+  applyBleed: 0
+  gainEvasion: 1
+  recoverAmmo: 0
+  draw: 0
+  gainEnergy: 0
+  timelineChange: 0
+  nextWeaponDamageBonus: 0
+  effects: []
